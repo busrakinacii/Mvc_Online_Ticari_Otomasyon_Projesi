@@ -21,5 +21,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public decimal SalesPrice { get; set; }
         //ToplamTutar=Total Amount
         public decimal SalesTotalAmount { get; set; }
+
+        public ICollection<Product> Products { get; set; }
+        public ICollection<Current> Currents { get; set; }
+        public ICollection<Personnel> Personnels { get; set; }
     }
 }

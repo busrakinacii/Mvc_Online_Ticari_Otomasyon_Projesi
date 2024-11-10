@@ -12,18 +12,17 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
 
         [Key]
         public int SalesTransactionId { get; set; }
-        //Ürün
-        //Cari
-        //Personel
         public DateTime SalesDateTime { get; set; }
         public int SalesPiece { get; set; }
         //Fiyat Price
         public decimal SalesPrice { get; set; }
         //ToplamTutar=Total Amount
         public decimal SalesTotalAmount { get; set; }
-
-        public ICollection<Product> Products { get; set; }
-        public ICollection<Current> Currents { get; set; }
-        public ICollection<Personnel> Personnels { get; set; }
+        //Ürün
+        //Cari
+        //Personel
+        public Product Product { get; set; }
+        public Current Current { get; set; }
+        public Personnel Personnel { get; set; }
     }
 }

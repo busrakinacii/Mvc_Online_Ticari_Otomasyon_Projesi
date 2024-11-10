@@ -33,6 +33,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public string ProductImage { get; set; }
         public Category Category { get; set; }
 
-        public SalesTransaction SalesTransaction { get; set; }
+        public ICollection<SalesTransaction> SalesTransactions { get; set; }
     }
 }

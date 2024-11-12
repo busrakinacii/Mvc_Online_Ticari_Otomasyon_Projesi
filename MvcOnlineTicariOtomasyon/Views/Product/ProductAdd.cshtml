@@ -1,0 +1,38 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Product
+@{
+    ViewBag.Title = "ProductAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Ürün Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Ürün Adı : ")
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Marka : ")
+    @Html.TextBoxFor(x => x.ProductBrand, new { @class = "form-control" })
+    <br />
+    @Html.Label("Stok : ")
+    @Html.TextBoxFor(x => x.ProductStock, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alış Fiyatı : ")
+    @Html.TextBoxFor(x => x.ProductPurchasePrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Satış Fiyatı : ")
+    @Html.TextBoxFor(x => x.ProductSalePrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori : ")
+    @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ürün Görsel : ")
+    @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("Durum : ")
+    @Html.TextBoxFor(x => x.ProductStatus, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">KAYDET</button>
+</form>
+
+
+

@@ -31,7 +31,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(500)]
         public string ProductImage { get; set; }
-        public Category Category { get; set; }
+
+        public int CategoryID { get; set; }
+        public virtual Category Category { get; set; }
 
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
     }

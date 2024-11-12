@@ -16,5 +16,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var values = co.Categories.ToList();
             return View(values);
         }
+        [HttpGet]
+        public ActionResult CategoryAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CategoryAdd(Category c)
+        {
+            co.Categories.Add(c);
+            co.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

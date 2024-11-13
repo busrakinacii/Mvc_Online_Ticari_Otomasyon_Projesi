@@ -42,5 +42,33 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             co.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult ProductEdit(int id)
+        {
+
+            List<SelectListItem> listValue = (from x in co.Categories.ToList()
+                                              select new SelectListItem
+                                              {
+                                                  Text = x.CategoryName,
+                                                  Value = x.CategoryId.ToString()
+                                              }).ToList();
+            ViewBag.Val = listValue;
+            var pro = co.Products.Find(id);
+            return View("ProductEdit", pro);
+        }
+
+        public ActionResult ProductUpdate(Product pro)
+        {
+            var value = co.Products.Find(pro.ProductId);
+            value.ProductName = pro.ProductName;
+            value.ProductStatus = pro.ProductStatus;
+            value.ProductBrand = pro.ProductBrand;
+            value.ProductId = pro.ProductId;
+            value.ProductImage = pro.ProductImage;
+            value.ProductPurchasePrice = pro.ProductPurchasePrice;
+            value.ProductSalePrice = pro.ProductSalePrice;
+            value.ProductStock = pro.ProductStock;
+            co.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

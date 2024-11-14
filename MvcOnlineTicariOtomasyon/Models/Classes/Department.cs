@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace MvcOnlineTicariOtomasyon.Models.Classes
 {
@@ -15,6 +16,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string DepartmentName { get; set; }
+        public bool DepartmentStatus { get; set; }
         public ICollection<Personnel> Personnels { get; set; }
     }
 }

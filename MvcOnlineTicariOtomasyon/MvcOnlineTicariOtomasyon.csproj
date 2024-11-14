@@ -290,6 +290,8 @@
     <Content Include="Views\Product\ProductAdd.cshtml" />
     <Content Include="Views\Product\ProductEdit.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Department\DepartmentAdd.cshtml" />
+    <Content Include="Views\Department\DepartmentEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

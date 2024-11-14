@@ -8,13 +8,13 @@
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
-        <th>ÜRÜN</th>
-        <th>MARKA</th>
-        <th>STOK</th>
-        <th>ALIŞ FİYAT</th>
-        <th>SATIŞ FİYAT</th>
-        <th>KATEGORİ</th>
-        <th>GÖRSEL</th>
+        <th>Ürün</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyat</th>
+        <th>Satış Fiyat</th>
+        <th>Kategori</th>
+        <th>Görsel</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
     </tr>
@@ -30,7 +30,7 @@
             <td>@p.Category.CategoryName</td>
             <td>@p.ProductImage</td>
             <td><a href="/Product/ProductDelete/@p.ProductId" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Product/ProductEdit/@p.ProductId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Product/ProductEdit/@p.ProductId" class="btn btn-warning">Güncelle</a></td>
         </tr>
     }
 </table>

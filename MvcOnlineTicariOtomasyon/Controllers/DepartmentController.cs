@@ -51,9 +51,21 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
 
         }
-        public ActionResult DepartmentDetail()
+        public ActionResult DepartmentDetail(int id)
         {
-            return View();
+            var val = co.Personnels.Where(x => x.PersonnelId == id).ToList();
+            var dpt = co.Departments.Where(x => x.DepartmentId == id).Select(y => y.DepartmentName).FirstOrDefault();
+            ViewBag.d = dpt;
+            return View(val);
+        }
+        public ActionResult DepartmentPersonnelSales(int id)
+        {
+            var values = co.SalesTransactions.Where(x => x.PersonnelID == id).ToList();
+
+            var prs = co.Personnels.Where(x => x.PersonnelId == id).Select(y => y.PersonnelName + " " + y.PersonnelSurname).FirstOrDefault();
+            ViewBag.dpers = prs;
+
+            return View(values);
         }
     }
 }

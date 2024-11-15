@@ -51,5 +51,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return RedirectToAction("Index");
 
         }
+        public ActionResult DepartmentDetail()
+        {
+            return View();
+        }
     }
 }

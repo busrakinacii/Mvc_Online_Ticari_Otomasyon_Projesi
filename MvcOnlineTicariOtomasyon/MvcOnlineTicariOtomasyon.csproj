@@ -292,6 +292,7 @@
     <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\Department\DepartmentAdd.cshtml" />
     <Content Include="Views\Department\DepartmentEdit.cshtml" />
+    <Content Include="Views\Department\DepartmentDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

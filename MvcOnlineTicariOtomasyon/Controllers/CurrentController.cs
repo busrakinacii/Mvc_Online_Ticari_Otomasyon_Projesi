@@ -24,7 +24,15 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult CurrentAdd(Current c)
         {
+            c.CurrentStatus = true;
             co.Currents.Add(c);
+            co.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult CurrentDelete(int id)
+        {
+            var cr = co.Currents.Find(id);
+            cr.CurrentStatus = false;
             co.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -27,6 +27,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string CurrentMail { get; set; }
+
+        public bool CurrentStatus { get; set; }
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
     }
 }

@@ -56,5 +56,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             co.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult CustomerSales(int id)
+        {
+            var values = co.SalesTransactions.Where(x => x.CurrentID == id).ToList();
+            var cr = co.Currents.Where(x => x.CurrentId == id).Select(y => y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
+            ViewBag.crrnt= cr;
+            return View(values);
+        }
+
     }
 }

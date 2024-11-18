@@ -298,6 +298,7 @@
     <Content Include="Views\Current\Index.cshtml" />
     <Content Include="Views\Current\CurrentAdd.cshtml" />
     <Content Include="Views\Current\CurrentEdit.cshtml" />
+    <Content Include="Views\Current\CustomerSales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

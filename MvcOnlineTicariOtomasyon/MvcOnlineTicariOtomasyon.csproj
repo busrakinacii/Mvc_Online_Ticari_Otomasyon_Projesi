@@ -297,6 +297,7 @@
     <Content Include="Views\Department\DepartmentPersonnelSales.cshtml" />
     <Content Include="Views\Current\Index.cshtml" />
     <Content Include="Views\Current\CurrentAdd.cshtml" />
+    <Content Include="Views\Current\CurrentEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

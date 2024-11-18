@@ -1,0 +1,30 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Current
+@{
+    ViewBag.Title = "CurrentEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("CurrentUpdate", "Current", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.CurrentId)
+        @Html.Label("Cari Ad:")
+        @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CurrentName, "", new { @style = "color-red" })
+        <br />
+        @Html.Label("Cari Soyad:")
+        @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CurrentName, "", new { @style = "color-red" })
+        <br />
+        @Html.Label("Cari Şehir:")
+        @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+        <br />
+        @Html.Label("Cari Mail:")
+        @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CurrentMail, "", new { @style = "color-red" })
+    </div>
+    <br />
+    <button class="btn btn-success">GÜNCELLE</button>
+}

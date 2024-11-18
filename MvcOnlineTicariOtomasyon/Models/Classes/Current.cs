@@ -14,10 +14,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public int CurrentId { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "En Fazla 30 Karakter yazabilirsiniz.")]
         public string CurrentName { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string CurrentSurname { get; set; }
 
         [Column(TypeName = "Varchar")]
@@ -25,7 +26,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public string CurrentCity { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "50 Karakterden Fazla Olamaz.")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail Adresi Geçerli Değildir.")]
         public string CurrentMail { get; set; }
 
         public bool CurrentStatus { get; set; }

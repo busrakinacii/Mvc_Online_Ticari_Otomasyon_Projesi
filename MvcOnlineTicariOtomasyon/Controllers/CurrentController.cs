@@ -36,5 +36,25 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             co.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult CurrentEdit(int id)
+        {
+            var cr = co.Currents.Find(id);
+            return View("CurrentEdit", cr);
+        }
+
+        public ActionResult CurrentUpdate(Current c)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("CurrentEdit");
+            }
+            var crr = co.Currents.Find(c.CurrentId);
+            crr.CurrentName = c.CurrentName;
+            crr.CurrentSurname = c.CurrentSurname;
+            crr.CurrentMail = c.CurrentMail;
+            crr.CurrentCity = c.CurrentCity;
+            co.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         Context co = new Context();
         public ActionResult Index()
         {
-            return View();
+            var values = co.SalesTransactions.ToList();
+            return View(values);
         }
     }
 }

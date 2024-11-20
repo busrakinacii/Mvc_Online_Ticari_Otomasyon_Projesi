@@ -13,12 +13,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         Context co = new Context();
         public ActionResult Index()
         {
-            var values = co.Personnels.ToList();
+            var values = co.Personnels.Where(x => x.PersonnelStatus == true).ToList();
             return View(values);
         }
         [HttpGet]
         public ActionResult PersonnelAdd()
         {
+
             List<SelectListItem> listValue = (from x in co.Departments.ToList()
                                               select new SelectListItem
                                               {
@@ -31,6 +32,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonnelAdd(Personnel p)
         {
+            p.PersonnelStatus = true;
             co.Personnels.Add(p);
             co.SaveChanges();
             return RedirectToAction("Index");
@@ -57,6 +59,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             value.PersonnelSurname = per.PersonnelSurname;
             value.PersonnelImage = per.PersonnelImage;
             value.DepartmentID = per.DepartmentID;
+            co.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult PersonnelDelete(int id)
+        {
+            var del = co.Personnels.Find(id);
+            del.PersonnelStatus = false;
             co.SaveChanges();
             return RedirectToAction("Index");
         }

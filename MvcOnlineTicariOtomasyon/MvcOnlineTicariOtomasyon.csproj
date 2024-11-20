@@ -304,10 +304,10 @@
     <Content Include="Views\Personnel\Index.cshtml" />
     <Content Include="Views\Personnel\PersonnelAdd.cshtml" />
     <Content Include="Views\Personnel\PersonnelEdit.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sales\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

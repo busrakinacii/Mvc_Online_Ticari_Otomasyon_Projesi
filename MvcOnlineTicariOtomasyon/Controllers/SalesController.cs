@@ -55,5 +55,32 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             co.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult SalesEdit(int id)
+        {
+            List<SelectListItem> Value1 = (from x in co.Products.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.ProductName,
+                                               Value = x.ProductId.ToString()
+                                           }).ToList();
+            List<SelectListItem> Value2 = (from x in co.Currents.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CurrentName + " " + x.CurrentSurname,
+                                               Value = x.CurrentId.ToString()
+                                           }).ToList();
+            List<SelectListItem> Value3 = (from x in co.Personnels.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.PersonnelName + " " + x.PersonnelSurname,
+                                               Value = x.PersonnelId.ToString()
+                                           }).ToList();
+            ViewBag.Val1 = Value1;
+            ViewBag.Val2 = Value2;
+            ViewBag.Val3 = Value3;
+
+            var val = co.SalesTransactions.Find(id);
+            return View("SalesEdit", val);
+        }
     }
 }

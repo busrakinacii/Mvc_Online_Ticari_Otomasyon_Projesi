@@ -19,11 +19,38 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult SalesAdd()
         {
+            List<SelectListItem> value1 = (from x in co.Products.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.ProductName,
+                                               Value = x.ProductId.ToString()
+                                           }).ToList();
+
+            List<SelectListItem> value2 = (from x in co.Currents.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CurrentName + " " + x.CurrentSurname,
+                                               Value = x.CurrentId.ToString()
+                                           }).ToList();
+            List<SelectListItem> value3 = (from x in co.Personnels.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.PersonnelName + " " + x.PersonnelSurname,
+                                               Value = x.PersonnelId.ToString()
+                                           }).ToList();
+
+            ViewBag.val3 = value3;
+
+            ViewBag.val2 = value2;
+
+            ViewBag.val1 = value1;
+
             return View();
         }
         [HttpPost]
         public ActionResult SalesAdd(SalesTransaction s)
         {
+            s.SalesDateTime = DateTime.Parse(DateTime.Now.ToShortDateString());
             co.SalesTransactions.Add(s);
             co.SaveChanges();
             return RedirectToAction("Index");

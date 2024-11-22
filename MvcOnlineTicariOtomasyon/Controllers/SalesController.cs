@@ -96,5 +96,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             co.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult SalesDetail(int id)
+        {
+            var values = co.SalesTransactions.Where(x => x.SalesTransactionId == id).ToList();
+            return View(values);
+        }
     }
 }

@@ -82,5 +82,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var val = co.SalesTransactions.Find(id);
             return View("SalesEdit", val);
         }
+
+        public ActionResult SalesUpdate(SalesTransaction s)
+        {
+            var value = co.SalesTransactions.Find(s.SalesTransactionId);
+            value.CurrentID = s.CurrentID;
+            value.SalesPiece = s.SalesPiece;
+            value.SalesPrice = s.SalesPrice;
+            value.PersonnelID = s.PersonnelID;
+            value.SalesDateTime = s.SalesDateTime;
+            value.SalesTotalAmount = s.SalesTotalAmount;
+            value.ProductID = s.ProductID;
+            co.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

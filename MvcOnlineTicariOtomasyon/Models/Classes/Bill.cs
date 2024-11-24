@@ -29,7 +29,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
 
         [Column(TypeName = "char")]
         [StringLength(5)]
-        public DateTime BillClock { get; set; }
+        public string BillClock { get; set; }
 
         //Deliverer=Teslim Eden
         [Column(TypeName = "Varchar")]
@@ -42,7 +42,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [StringLength(30)]
         public string BillRecipient { get; set; }
 
-
+        public decimal BillTotalAmount { get; set; }
         public ICollection<BillPencil> BillPencils { get; set; }
     }
 }

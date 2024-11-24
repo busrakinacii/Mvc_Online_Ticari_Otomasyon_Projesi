@@ -13,7 +13,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         Context co = new Context();
         public ActionResult Index()
         {
-            var values = co.SalesTransactions.ToList();
+            var values = co.SalesTransactions.Where(x => x.SalesStatus == true).ToList();
             return View(values);
         }
         [HttpGet]
@@ -50,6 +50,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult SalesAdd(SalesTransaction s)
         {
+            s.SalesStatus = true;
             s.SalesDateTime = DateTime.Parse(DateTime.Now.ToShortDateString());
             co.SalesTransactions.Add(s);
             co.SaveChanges();
@@ -101,6 +102,15 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var values = co.SalesTransactions.Where(x => x.SalesTransactionId == id).ToList();
             return View(values);
+        }
+        public ActionResult SalesDelete(int id)
+        {
+            var sd = co.SalesTransactions.Find(id);
+            sd.SalesStatus = false;
+            co.SaveChanges();
+            return RedirectToAction("Index");
+
+
         }
     }
 }

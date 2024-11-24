@@ -24,9 +24,10 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public int ProductID { get; set; }
         public int CurrentID { get; set; }
         public int PersonnelID { get; set; }
-
+        public bool SalesStatus { get; set; }
         public virtual Product Product { get; set; }
         public virtual Current Current { get; set; }
         public virtual Personnel Personnel { get; set; }
+
     }
 }

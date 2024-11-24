@@ -31,6 +31,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult ProductAdd(Product p)
         {
+            p.ProductStatus = true;
             var pro = co.Products.Add(p);
             co.SaveChanges();
             return RedirectToAction("Index");

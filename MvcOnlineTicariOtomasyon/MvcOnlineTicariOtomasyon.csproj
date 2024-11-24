@@ -544,6 +544,7 @@
     <Content Include="Views\Sales\SalesAdd.cshtml" />
     <Content Include="Views\Sales\SalesEdit.cshtml" />
     <Content Include="Views\Sales\SalesDetail.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

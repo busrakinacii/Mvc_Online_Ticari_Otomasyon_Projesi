@@ -70,5 +70,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             co.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult ProductList()
+        {
+            var values = co.Products.ToList();
+            return View(values);
+        }
     }
 }

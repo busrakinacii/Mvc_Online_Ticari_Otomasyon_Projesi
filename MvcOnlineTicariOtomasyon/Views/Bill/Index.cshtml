@@ -1,0 +1,41 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Classes
+@model List<Bill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Toplam</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.BillId</td>
+            <td>@x.BillSerialNumber</td>
+            <td>@x.BillOrderNumber</td>
+            <td>@x.BillTaxOffice</td>
+            <td>@x.BillDatetime</td>
+            <td>@x.BillClock</td>
+            <td>100</td>
+            <td>@x.BillDeliverer</td>
+            <td>@x.BillRecipient</td>
+
+            <td><a href="/Bill/BillUpdate/@x.BillId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-info" style="background-color:lightblue; color:black">Detay</a></td>
+        </tr>
+    }
+</table>
+<a href="/Bill/BillAdd" class="btn btn-primary">Yeni Kategori Ekle</a>
+

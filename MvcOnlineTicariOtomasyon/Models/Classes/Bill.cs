@@ -27,6 +27,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [StringLength(60)]
         public string BillTaxOffice { get; set; }
 
+        [Column(TypeName = "char")]
+        [StringLength(5)]
         public DateTime BillClock { get; set; }
 
         //Deliverer=Teslim Eden

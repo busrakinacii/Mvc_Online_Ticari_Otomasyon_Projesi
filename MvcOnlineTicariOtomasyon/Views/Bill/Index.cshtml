@@ -13,9 +13,9 @@
         <th>Vergi Dairesi</th>
         <th>Tarih</th>
         <th>Saat</th>
-        <th>Toplam</th>
         <th>Teslim Eden</th>
         <th>Teslim Alan</th>
+        <th>Toplam</th>
         <th>Güncelle</th>
         <th>Detaylar</th>
     </tr>
@@ -28,14 +28,14 @@
             <td>@x.BillTaxOffice</td>
             <td>@x.BillDatetime</td>
             <td>@x.BillClock</td>
-            <td>100</td>
             <td>@x.BillDeliverer</td>
             <td>@x.BillRecipient</td>
+            <td>@x.BillTotalAmount</td>
 
             <td><a href="/Bill/BillUpdate/@x.BillId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-info" style="background-color:lightblue; color:black">Detay</a></td>
         </tr>
     }
 </table>
-<a href="/Bill/BillAdd" class="btn btn-primary">Departman Ekle</a>
+<a href="/Bill/BillAdd" class="btn btn-primary">Yeni Fatura Girişi</a>
 

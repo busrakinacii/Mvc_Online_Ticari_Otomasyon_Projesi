@@ -33,5 +33,18 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var bill = co.Bills.Find(id);
             return View("BillEdit", bill);
         }
+        public ActionResult BillUpdate(Bill b)
+        {
+            var bil = co.Bills.Find(b.BillId);
+            bil.BillSerialNumber = b.BillSerialNumber;
+            bil.BillOrderNumber = b.BillOrderNumber;
+            bil.BillClock = b.BillClock;
+            bil.BillDatetime = b.BillDatetime;
+            bil.BillTaxOffice = b.BillTaxOffice;
+            bil.BillDeliverer = b.BillDeliverer;
+            bil.BillRecipient = b.BillRecipient;
+            co.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

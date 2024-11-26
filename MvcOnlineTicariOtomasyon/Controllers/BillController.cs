@@ -28,5 +28,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             co.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult BillEdit(int id)
+        {
+            var bill = co.Bills.Find(id);
+            return View("BillEdit", bill);
+        }
     }
 }

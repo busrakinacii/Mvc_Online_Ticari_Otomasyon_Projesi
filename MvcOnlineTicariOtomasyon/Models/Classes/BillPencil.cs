@@ -21,7 +21,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         //Birim Fiyat=unit Price
         public decimal BillPencilUnitPrice { get; set; }
         public decimal BillPencilTotal { get; set; }
-        public int Billid { get; set; }
+        public int BillId { get; set; }
         public virtual Bill Bill { get; set; }
     }
 }

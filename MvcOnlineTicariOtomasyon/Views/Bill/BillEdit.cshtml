@@ -1,0 +1,36 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Bill
+@{
+    ViewBag.Title = "BillEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Fatura Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("BillUpdate", "Bill", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.BillId)
+        @Html.Label("Fatura Seri No : ")
+        @Html.TextBoxFor(x => x.BillSerialNumber, new { @class = "form-control" })
+        <br />
+        @Html.Label("Fatura Sıra No : ")
+        @Html.TextBoxFor(x => x.BillOrderNumber, new { @class = "form-control" })
+        <br />
+        @Html.Label("Vergi Dairesi : ")
+        @Html.TextBoxFor(x => x.BillTaxOffice, new { @class = "form-control" })
+        <br />
+        @Html.Label("Tarih : ")
+        @Html.TextBoxFor(x => x.BillDatetime, new { @class = "form-control" })
+        <br />
+        @Html.Label("Saat : ")
+        @Html.TextBoxFor(x => x.BillClock, new { @class = "form-control" })
+        <br />
+        @Html.Label("Teslim Eden : ")
+        @Html.TextBoxFor(x => x.BillDeliverer, new { @class = "form-control" })
+        <br />
+        @Html.Label("Teslim Alan : ")
+        @Html.TextBoxFor(x => x.BillRecipient, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-success">GÜNCELLE</button>
+}

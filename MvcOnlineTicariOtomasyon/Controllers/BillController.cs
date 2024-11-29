@@ -51,5 +51,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var values = co.BillPencils.Where(x => x.BillId == id).ToList();
             return View(values);
         }
+        [HttpGet]
+        public ActionResult NewPencil()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Newpencil(BillPencil p)
+        {
+            co.BillPencils.Add(p);
+            co.SaveChanges();
+            return RedirectToAction("Index"); 
+        }
     }
 }

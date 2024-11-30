@@ -1,0 +1,28 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.BillPencil
+@{
+    ViewBag.Title = "NewPencil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Kalem Girişi</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Fatura Açıklama :")
+    @Html.TextBoxFor(x => x.BillPencilExplanation, new { @class = "form-control" })
+    <br />
+    @Html.Label("Miktar :")
+    @Html.TextBoxFor(x => x.BillPencilAmount, new { @class = "form-control" })
+    <br />
+    @Html.Label("Birim Fiyat :")
+    @Html.TextBoxFor(x => x.BillPencilUnitPrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tutar :")
+    @Html.TextBoxFor(x => x.BillPencilTotal, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fatura ID :")
+    @Html.TextBoxFor(x => x.BillId, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">KAYDET</button>
+</form>
+
+

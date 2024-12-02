@@ -42,6 +42,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var value11 = co.Products.Count(x => x.ProductName == "Laptop").ToString();
             ViewBag.d11 = value11;
 
+            var value12 = co.Products.GroupBy(x => x.ProductBrand).OrderByDescending(y => y.Count()).Select(z => z.Key).FirstOrDefault();
+            ViewBag.d12 = value12;
+
+            //value13 Sorgusunda satış tablosunda en fazla ürünün idsini bulduk ve adını ürünler tablosundan adını getirdik
+            var value13 = co.Products.Where(d => d.ProductId == (co.SalesTransactions.GroupBy(x => x.ProductID).OrderByDescending(y => y.Count()).Select(z => z.Key).FirstOrDefault())).Select(k => k.ProductName).FirstOrDefault();
+            ViewBag.d13 = value13;
+
             var value14 = co.SalesTransactions.Sum(x => x.SalesTotalAmount).ToString();
             ViewBag.d14 = value14;
 

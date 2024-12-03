@@ -20,5 +20,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public DbSet<Personnel> Personnels { get; set; }
         public DbSet<SalesTransaction> SalesTransactions { get; set; }
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<ProductDetail> ProductDetails { get; set; }
+
     }
 }

@@ -151,6 +151,7 @@
     <Compile Include="Models\Classes\Current.cs" />
     <Compile Include="Models\Classes\Department.cs" />
     <Compile Include="Models\Classes\Expense.cs" />
+    <Compile Include="Models\Classes\GroupClass.cs" />
     <Compile Include="Models\Classes\Personnel.cs" />
     <Compile Include="Models\Classes\Product.cs" />
     <Compile Include="Models\Classes\ProductDetail.cs" />

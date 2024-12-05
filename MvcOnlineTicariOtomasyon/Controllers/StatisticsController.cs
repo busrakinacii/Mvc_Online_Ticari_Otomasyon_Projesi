@@ -73,15 +73,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult SimpleTables()
         {
-            var query = (from x in co.Currents
-                         group x by x.CurrentCity into g
-                         select new GroupClass
-                         {
-                             City = g.Key,
-                             Total = g.Count()
-                         });
+            var query = from x in co.Currents
+                        group x by x.CurrentCity into g
+                        select new GroupClass
+                        {
+                            City = g.Key,
+                            Total = g.Count()
+                        };
 
             return View(query.ToList());
+        }
+        public PartialViewResult Partial1()
+        {
+            var query2 = from x in co.Personnels
+                         group x by x.DepartmentID into g
+                         select new GroupClass2
+                         {
+                             Departmentt = g.Key,
+                             Number = g.Count()
+                         };
+            return PartialView(query2.ToList());
         }
     }
 }

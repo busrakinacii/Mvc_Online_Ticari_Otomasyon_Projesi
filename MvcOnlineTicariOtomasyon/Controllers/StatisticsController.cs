@@ -99,5 +99,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var query = co.Currents.ToList();
             return PartialView(query);
         }
+
+        public PartialViewResult Partial3()
+        {
+            var query = co.Products.Take(10).ToList();
+            return PartialView(query);
+        }
     }
 }

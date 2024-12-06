@@ -105,5 +105,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var query = co.Products.Take(10).ToList();
             return PartialView(query);
         }
+        public PartialViewResult Partial4()
+        {
+            var query3 = (from x in co.Products
+                          group x by x.ProductBrand into a
+                          select new GroupClass3
+                          {
+                              Brand = a.Key,
+                              Number = a.Count()
+                          });
+            return PartialView(query3.ToList());
+
+        }
     }
 }

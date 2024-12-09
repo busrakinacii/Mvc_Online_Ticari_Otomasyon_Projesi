@@ -23,7 +23,7 @@
                         <td>@{sirano++;} @sirano</td>
                         <td>@x.Departmentt</td>
                         <td>
-                            @if (x.Number == 1)
+                            @if (x.Number <= 1)
                             {
                                 <div class="progress progress-xs">
                                     <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
@@ -35,7 +35,7 @@
                                     <div class="progress-bar bg-warning" style="width: 70%"></div>
                                 </div>
                             }
-                            @if (x.Number == 3)
+                            @if (x.Number >= 3)
                             {
                                 <div class="progress progress-xs progress-striped active">
                                     <div class="progress-bar bg-success" style="width: 90%"></div>
@@ -43,7 +43,7 @@
                             }
                         </td>
                         <td>
-                            @if (x.Number == 1)
+                            @if (x.Number <= 1)
                             {
                                 <span class="badge bg-danger">@x.Number</span>
                             }
@@ -51,7 +51,7 @@
                             {
                                 <span class="badge bg-warning">@x.Number</span>
                             }
-                            @if (x.Number == 3)
+                            @if (x.Number >= 3)
                             {
                                 <span class="badge bg-success">@x.Number</span>
                             }

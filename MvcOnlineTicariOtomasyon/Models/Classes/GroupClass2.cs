@@ -7,7 +7,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
 {
     public class GroupClass2
     {
-        public int Departmentt { get; set; }
+        public string Departmentt { get; set; }
         public int Number { get; set; }
     }
 }

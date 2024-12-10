@@ -2859,6 +2859,7 @@
     <Content Include="Views\Statistics\Partial2.cshtml" />
     <Content Include="Views\Statistics\Partial3.cshtml" />
     <Content Include="Views\Statistics\Partial4.cshtml" />
+    <Content Include="Views\Personnel\PersonnelList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

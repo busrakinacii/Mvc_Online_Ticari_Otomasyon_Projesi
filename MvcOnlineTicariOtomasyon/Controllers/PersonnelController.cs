@@ -71,7 +71,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult PersonnelList()
         {
-            return View();
+            var query = co.Personnels.ToList();
+            return View(query);
         }
 
 

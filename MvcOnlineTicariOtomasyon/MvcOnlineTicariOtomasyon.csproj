@@ -158,6 +158,7 @@
     <Compile Include="Models\Classes\Product.cs" />
     <Compile Include="Models\Classes\ProductDetail.cs" />
     <Compile Include="Models\Classes\SalesTransaction.cs" />
+    <Compile Include="Models\Classes\ToDoList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

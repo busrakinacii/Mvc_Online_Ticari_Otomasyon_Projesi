@@ -23,7 +23,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.v3 = value3;
             var value4 = (from x in co.Currents select x.CurrentCity).Distinct().Count().ToString();
             ViewBag.v4 = value4;
-            return View();
+
+            var toDoList = co.toDoLists.ToList();
+            return View(toDoList);
         }
     }
 }

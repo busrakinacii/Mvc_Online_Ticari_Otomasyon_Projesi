@@ -12,6 +12,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Key]
         public int PersonnelId { get; set; }
 
+        [Display(Name = "Personel Adı")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string PersonnelName { get; set; }
@@ -25,7 +26,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public string PersonnelImage { get; set; }
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
 
-        public bool PersonnelStatus {  get; set; }
+        public bool PersonnelStatus { get; set; }
         public int DepartmentID { get; set; }
         public virtual Department Department { get; set; }
 

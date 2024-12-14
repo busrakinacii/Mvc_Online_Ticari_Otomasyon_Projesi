@@ -22,7 +22,8 @@
             <td>@x.PersonnelId</td>
             <td>@x.PersonnelName</td>
             <td>@x.PersonnelSurname</td>
-            <td>@x.PersonnelImage</td>
+            <td><img src="@x.PersonnelImage" style="width:100px; height:50px;" />
+            </td>
             <td>@x.Department.DepartmentName</td>
             <td><a href="/Personnel/PersonnelDelete/@x.PersonnelId" class="btn btn-danger">Sil</a></td>
             <td><a href="/Personnel/PersonnelEdit/@x.PersonnelId" class="btn btn-warning">Güncelle</a></td>

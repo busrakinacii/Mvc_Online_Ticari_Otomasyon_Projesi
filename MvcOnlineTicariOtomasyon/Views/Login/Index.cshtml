@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h1>Asp.Net Mvc5 ile</h1>
                     <h2>Dinamik Web Projesi Geliştirme</h2>
                     <p>
-                        Admin, Personel kişisel sayfası ve cari kişisel sayfası olmak üzere 3 tane temel yapımız bulunmaktadır.giriş yapmak istediğiniz yetki durumunuza göre sağ taraftan ilgili menüyü seçin.
+                        Admin, Personel kişisel sayfası ve cari kişisel sayfası olmak üzere 3 tane temel yapımız bulunmaktadır. Giriş yapmak istediğiniz yetki durumunuza göre sağ taraftan ilgili menüyü seçin.
                     </p>
                     <div class="content3">
                         <ul>
@@ -137,26 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- register form popup-->
     <div class="pop-up">
         <div id="small-dialog2" class="mfp-hide book-form">
-
-            <div class="login-form login-form-left">
-                <div class="agile-row">
-                    <h3>Yeni Cari Kaydı</h3>
-                    <div class="login-agileits-top">
-                        <form action="#" method="post">
-                            <input type="text" class="name" name="CurrentName" Placeholder="Adınız" required="" />
-                            <input type="text" class="name" name="CurrentSurname" Placeholder="Soyadınız" required="" />
-                            <input type="email" class="name" name="CurrentCity" Placeholder="Şehir" required="" />
-                            <input type="text" class="mail" name="CurrentMail" Placeholder="Mail Adresiniz" required="" />
-                            <input type="password" class="password" name="password" Placeholder="Şifre" required="" />
-                            <div class="login-check">
-                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Kuralları Okudum.&amp; Kabul Ediyorum</label>
-                            </div>
-                            <input type="submit" value="Kaydol">
-                        </form>
-                    </div>
-                </div>
-            </div>
-
+            @Html.Action("Partial1", "Login");
         </div>
     </div>
     <!-- //register form popup-->

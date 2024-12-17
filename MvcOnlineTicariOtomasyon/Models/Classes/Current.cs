@@ -31,6 +31,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail Adresi Geçerli Değildir.")]
         public string CurrentMail { get; set; }
 
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(50)]
+        public string CurrentPassword { get; set; }
+
         public bool CurrentStatus { get; set; }
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
     }

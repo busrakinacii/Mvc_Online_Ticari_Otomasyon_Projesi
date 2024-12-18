@@ -9,6 +9,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     public class CurrentPanelController : Controller
     {
         // GET: CurrentPanel
+        [Authorize]
         public ActionResult Index()
         {
             return View();

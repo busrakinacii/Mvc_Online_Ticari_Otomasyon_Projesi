@@ -90,7 +90,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //section -->
     <!-- login form popup-->
     <div class="pop-up">
-
         <div id="small-dialog" class="mfp-hide book-form">
             <div class="login-form login-form-left">
                 <div class="agile-row">
@@ -98,11 +97,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="fa fa-lock"></span>
                     <div class="clear"></div>
                     <div class="login-agileits-top">
-                        @Html.BeginForm("CurrentLogin1", "Login", FormMethod.Post)
+                        @using (Html.BeginForm("CurrentLogin1", "Login", FormMethod.Post))
                         {
-                        <input type="text" class="name" name="CurrentMail" Placeholder="Mail Adresiniz" required="" />
-                        <input type="password" class="password" name="CurrentPassword" Placeholder="Şifreniz" required="" />
-                        <input type="submit" value="Giriş Yap">
+                            <input type="text" class="name" name="CurrentMail" Placeholder="Mail Adresiniz" required="" />
+                            <input type="password" class="password" name="CurrentPassword" Placeholder="Şifreniz" required="" />
+                            <input type="submit" value="Giriş Yap">
                         }
                     </div>
                     <div class="login-agileits-bottom">
@@ -137,7 +136,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- register form popup-->
     <div class="pop-up">
         <div id="small-dialog2" class="mfp-hide book-form">
-            @Html.Action("Partial1", "Login");
+            @Html.Action("Partial1", "Login")
         </div>
     </div>
     <!-- //register form popup-->

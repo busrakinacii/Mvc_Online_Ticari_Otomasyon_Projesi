@@ -11,10 +11,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: Product
         Context co = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var pro = co.Products.Where(x => x.ProductStatus == true).ToList();
-            return View(pro);
+            var pro = from x in co.Products select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                pro = pro.Where(y => y.ProductName.Contains(p));
+            }
+            return View(pro.ToList());
         }
         [HttpGet]
         public ActionResult ProductAdd()

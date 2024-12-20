@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+    <p>
+        Ürün ADI: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<br />
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -14,7 +22,6 @@
         <th>Alış Fiyat</th>
         <th>Satış Fiyat</th>
         <th>Kategori</th>
-        <th>Görsel</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
     </tr>
@@ -25,10 +32,9 @@
             <td>@p.ProductName</td>
             <td>@p.ProductBrand</td>
             <td>@p.ProductStock</td>
-            <td>@p.ProductPurchasePrice</td>
-            <td>@p.ProductSalePrice</td>
+            <td>@p.ProductPurchasePrice ₺</td>
+            <td>@p.ProductSalePrice ₺</td>
             <td>@p.Category.CategoryName</td>
-            <td>@p.ProductImage</td>
             <td><a href="/Product/ProductDelete/@p.ProductId" class="btn btn-danger">Sil</a></td>
             <td><a href="/Product/ProductEdit/@p.ProductId" class="btn btn-warning">Güncelle</a></td>
         </tr>

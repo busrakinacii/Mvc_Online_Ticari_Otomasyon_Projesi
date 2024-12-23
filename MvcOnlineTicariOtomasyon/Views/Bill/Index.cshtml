@@ -26,10 +26,21 @@
 
             <td><a href="/Bill/BillEdit/@x.BillId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-info" style="background-color:lightblue; color:black">Detay</a></td>
-            <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-default" style="background-color:indianred; color:black">Pop_List</a></td>
+            <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-default" style="background-color:indianred; color:black">Popup_List</a></td>
             <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-info" style="background-color:deepskyblue; color:black">Y.Kalem</a></td>
         </tr>
     }
 </table>
 <a href="/Bill/BillAdd" class="btn btn-primary">Yeni Fatura Girişi</a>
-
+<br />
+<br />
+<button type="button" class="btn btn-warning" style="background-color:antiquewhite" data-toggle="modal" data-target="#Modal1">Popup Penceresi</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Popup Diyalog Ekranı</h2>
+            </div>
+        </div>
+    </div>
+</div>

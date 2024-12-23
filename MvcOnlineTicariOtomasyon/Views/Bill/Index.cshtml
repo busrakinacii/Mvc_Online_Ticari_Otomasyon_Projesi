@@ -8,28 +8,26 @@
 <table class="table table-bordered" style="margin-top:20px">
     <tr>
         <th>Seri Sıra No</th>
-        <th>Vergi Dairesi</th>
         <th>Tarih</th>
         <th>Saat</th>
-        <th>Teslim Eden</th>
-        <th>Teslim Alan</th>
         <th>Toplam</th>
         <th>Güncelle</th>
         <th>Detaylar</th>
+        <th>Popup Liste</th>
+        <th>Yeni Kalem</th>
     </tr>
     @foreach (var x in Model)
     {
         <tr>
             <td>@x.BillSerialNumber @x.BillOrderNumber</td>
-            <td>@x.BillTaxOffice</td>
             <td>@x.BillDatetime</td>
             <td>@x.BillClock</td>
-            <td>@x.BillDeliverer</td>
-            <td>@x.BillRecipient</td>
             <td>@x.BillTotalAmount ₺</td>
 
             <td><a href="/Bill/BillEdit/@x.BillId" class="btn btn-warning">Güncelle</a></td>
             <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-info" style="background-color:lightblue; color:black">Detay</a></td>
+            <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-default" style="background-color:indianred; color:black">Pop_List</a></td>
+            <td><a href="/Bill/BillDetail/@x.BillId" class="btn btn-info" style="background-color:deepskyblue; color:black">Y.Kalem</a></td>
         </tr>
     }
 </table>

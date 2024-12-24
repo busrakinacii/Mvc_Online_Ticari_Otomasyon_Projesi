@@ -6,19 +6,23 @@
 <br />
 <h2>Yeni Personel Sayfası</h2>
 <br />
-<form class="form-group" method="post">
-    @Html.Label("Personel Adı :")
-    @Html.TextBoxFor(x => x.PersonnelName, new { @class = "form-control" })
-    <br />
-    @Html.Label("Personel Soyadı :")
-    @Html.TextBoxFor(x => x.PersonnelSurname, new { @class = "form-control" })
-    <br />
-    @Html.Label("Personel Görsel :")
-    @Html.TextBoxFor(x => x.PersonnelImage, new { @class = "form-control" })
-    <br />
-    @Html.Label("Departman :")
-    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
-    <br />
-    <button class="btn btn-info">KAYDET</button>
-</form>
+@using (Html.BeginForm("PersonnelAdd", "Personnel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <form class="form-group" method="post">
+        @Html.Label("Personel Adı :")
+        @Html.TextBoxFor(x => x.PersonnelName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Personel Soyadı :")
+        @Html.TextBoxFor(x => x.PersonnelSurname, new { @class = "form-control" })
+        <br />
+        @Html.Label("Personel Görsel :")
+        @*@Html.TextBoxFor(x => x.PersonnelImage, new { @class = "form-control" })*@
+        <input type="file" name="PersonnelImage" />
+        <br />
+        @Html.Label("Departman :")
+        @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">KAYDET</button>
+    </form>
 
+}

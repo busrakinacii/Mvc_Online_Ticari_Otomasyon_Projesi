@@ -1,6 +1,7 @@
 ﻿using MvcOnlineTicariOtomasyon.Models.Classes;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -32,6 +33,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonnelAdd(Personnel p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string FName = Path.GetFileName(Request.Files[0].FileName);
+                string FExtension = Path.GetExtension(Request.Files[0].FileName);
+                string FPath = "~/Image/" + FName + FExtension;
+                Request.Files[0].SaveAs(Server.MapPath(FPath));
+                p.PersonnelImage = "/Image/" + FName + FExtension;
+
+            }
+
             p.PersonnelStatus = true;
             co.Personnels.Add(p);
             co.SaveChanges();

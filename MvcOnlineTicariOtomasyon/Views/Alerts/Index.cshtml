@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<br />
+<button class="btn btn-default" style="background-color:aquamarine" id="btn1">Button1</button>
+<button class="btn btn-warning" id="btn2">Button2</button>
+<button class="btn btn-info" id="btn3">Button3</button>
+<button class="btn btn-danger" id="btn4">Button4</button>
+<button class="btn btn-success" id="btn5">Button5</button>
+
+<script>
+    $('#btn1').click(function () {
+        swal("Helloooo Büşş");
+    });
+</script>
+
+<script>
+    $('#btn2').click(function () {
+        swal("Burası Başlık!", "...Ve Burası Metin!");
+    });
+</script>
+
+<script>
+    $('#btn3').click(function () {
+        swal("Good job!", "You clicked the button!", "success");
+    });
+</script>
+
+<script>
+    $('#btn4').click(function () {
+        swal("Birinci Mesaj")
+            .then((value) => {
+                swal(`İkinci Mesaj: ${value}`);
+            });
+    });
+</script>
+
+<script>
+    $('#btn5').click(function () {
+        swal({
+            title: "Emin Misin?",
+            text: "Silindikten sonra bu hayali dosyayı kurtaramayacaksınız",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Hayali dosyanız silindi!!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Hayali dosyanız güvende!");
+                }
+            });
+    });
+</script>

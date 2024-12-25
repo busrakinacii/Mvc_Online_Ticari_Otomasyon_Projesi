@@ -133,6 +133,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlertsController.cs" />
     <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CurrentController.cs" />
@@ -2180,6 +2181,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\istockphoto-1369746033-612x612.jpg.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -2926,10 +2928,10 @@
     <Content Include="Views\Shared\_CurrentLayout.cshtml" />
     <Content Include="Views\CurrentPanel\Index.cshtml" />
     <Content Include="Views\CurrentPanel\Orders.cshtml" />
+    <Content Include="Views\Alerts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

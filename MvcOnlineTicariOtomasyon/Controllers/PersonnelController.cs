@@ -71,7 +71,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                 string FExtension = Path.GetExtension(Request.Files[0].FileName);
                 string FPath = "~/Image/" + FName + FExtension;
                 Request.Files[0].SaveAs(Server.MapPath(FPath));
-                p.PersonnelImage = "/Image/" + FName + FExtension;
+                per.PersonnelImage = "/Image/" + FName + FExtension;
 
             }
 

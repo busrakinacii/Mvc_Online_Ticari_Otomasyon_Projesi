@@ -65,6 +65,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult PersonnelUpdate(Personnel per)
         {
+            if (Request.Files.Count > 0)
+            {
+                string FName = Path.GetFileName(Request.Files[0].FileName);
+                string FExtension = Path.GetExtension(Request.Files[0].FileName);
+                string FPath = "~/Image/" + FName + FExtension;
+                Request.Files[0].SaveAs(Server.MapPath(FPath));
+                p.PersonnelImage = "/Image/" + FName + FExtension;
+
+            }
+
             var value = co.Personnels.Find(per.PersonnelId);
             value.PersonnelName = per.PersonnelName;
             value.PersonnelSurname = per.PersonnelSurname;

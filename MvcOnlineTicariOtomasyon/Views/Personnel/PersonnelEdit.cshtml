@@ -6,7 +6,7 @@
 <br />
 <h2>Personnel Güncelleme Sayfası</h2>
 <br />
-@using (Html.BeginForm("PersonnelUpdate", "Personnel", FormMethod.Post))
+@using (Html.BeginForm("PersonnelUpdate", "Personnel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
         @Html.HiddenFor(x => x.PersonnelId)
@@ -19,7 +19,8 @@
         @*@Html.ValidationMessageFor(x => x.CurrentName, "", new { @style = "color-red" })*@
         <br />
         @Html.Label("Personel Görsel:")
-        @Html.TextBoxFor(x => x.PersonnelImage, new { @class = "form-control" })
+        @*@Html.TextBoxFor(x => x.PersonnelImage, new { @class = "form-control" })*@
+        <input type="file" name="PersonnelImage" />
         <br />
         @Html.Label("Departman : ")
         @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.Val, new { @class = "form-control" })

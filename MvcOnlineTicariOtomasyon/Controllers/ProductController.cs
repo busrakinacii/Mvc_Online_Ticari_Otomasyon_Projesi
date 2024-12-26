@@ -80,5 +80,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var values = co.Products.ToList();
             return View(values);
         }
+        public ActionResult MakeSale()
+        {
+            return View();
+        }
+        public ActionResult MakeSale(SalesTransaction s)
+        {
+            return View();
+        }
     }
 }

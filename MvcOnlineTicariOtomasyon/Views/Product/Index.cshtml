@@ -24,6 +24,7 @@
         <th>Kategori</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
+        <th>SATIŞ YAP</th>
     </tr>
     @foreach (var p in Model)
     {
@@ -37,6 +38,7 @@
             <td>@p.Category.CategoryName</td>
             <td><a href="/Product/ProductDelete/@p.ProductId" class="btn btn-danger">Sil</a></td>
             <td><a href="/Product/ProductEdit/@p.ProductId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Product/MakeSale/@p.ProductId" class="btn btn-default" style="background-color:aquamarine">Satış Yap</a></td>
         </tr>
     }
 </table>

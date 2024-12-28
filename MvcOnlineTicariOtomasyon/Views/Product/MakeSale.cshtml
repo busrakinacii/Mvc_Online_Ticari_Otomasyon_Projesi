@@ -1,8 +1,33 @@
-﻿
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.SalesTransaction
 @{
     ViewBag.Title = "MakeSale";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<br />
+<h2>Satış Yap</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Ürün ID : ")
+    @Html.TextBoxFor(x => x.ProductID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel ID : ")
+    @Html.TextBoxFor(x => x.PersonnelID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Cari ID : ")
+    @Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adet : ")
+    @Html.TextBoxFor(x => x.SalesPiece, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fiyat : ")
+    @Html.TextBoxFor(x => x.SalesPrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Toplam Tutar : ")
+    @Html.TextBoxFor(x => x.SalesTotalAmount, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih : ")
+    @Html.TextBoxFor(x => x.SalesDateTime, new { @class = "form-control" })
 
-<h2>MakeSale</h2>
-
+    <br />
+    <button class="btn btn-primary">Satış Yap</button>
+</form>

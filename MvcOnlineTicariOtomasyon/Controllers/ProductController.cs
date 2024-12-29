@@ -81,8 +81,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(values);
         }
         [HttpGet]
-        public ActionResult MakeSale()
+        public ActionResult MakeSale(int id)
         {
+            List<SelectListItem> value3 = (from x in co.Personnels.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.PersonnelName + " " + x.PersonnelSurname,
+                                               Value = x.PersonnelId.ToString()
+                                           }).ToList();
+
+            ViewBag.val3 = value3;
+            var value1 = co.Products.Find(id);
+            ViewBag.val1 = value1.ProductId;
+            ViewBag.val2 = value1.ProductSalePrice;
             return View();
         }
         [HttpPost]

@@ -17,13 +17,15 @@
     @Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })
     <br />
     @Html.Label("Adet : ")
-    @Html.TextBoxFor(x => x.SalesPiece, new { @class = "form-control" })
+    <input type="number" class="form-control" max="10" min="0" placeholder="Adet Giriniz..." id="txt1" onchange="sum()" />
+    @*@Html.TextBoxFor(x => x.SalesPiece, new { @class = "form-control" })*@
     <br />
     @Html.Label("Fiyat : ")
-    <input type="text" name="SalesPrice" value="@ViewBag.val2" class="form-control" />
+    <input type="text" name="SalesPrice" value="@ViewBag.val2" class="form-control" id="txt2" onkeyup="sum()" />
     <br />
     @Html.Label("Toplam Tutar : ")
-    @Html.TextBoxFor(x => x.SalesTotalAmount, new { @class = "form-control" })
+    <input type="text" name="SalesTotalAmount" class="form-control" value="0" max="10" min="0" id="txt3" readonly />
+    @*@Html.TextBoxFor(x => x.SalesTotalAmount, new { @class = "form-control" })*@
     <br />
     @Html.Label("Tarih : ")
     @Html.TextBoxFor(x => x.SalesDateTime, new { @class = "form-control" })
@@ -31,3 +33,17 @@
     <br />
     <button class="btn btn-primary">Satış Yap</button>
 </form>
+<br />
+
+<input type="text" id="txt3" />
+<script>
+    fuction ? sum() {
+        var sayi1 = document.getElementById('txt1').value;
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+        }
+
+    }
+</script>

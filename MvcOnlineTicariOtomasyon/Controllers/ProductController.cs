@@ -80,6 +80,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var values = co.Products.ToList();
             return View(values);
         }
+        //********************Satış Yap Action Resultı ******************
         [HttpGet]
         public ActionResult MakeSale(int id)
         {
@@ -96,10 +97,15 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.val2 = value1.ProductSalePrice;
             return View();
         }
+        //********************Satış Yap Action Resultı ******************
         [HttpPost]
         public ActionResult MakeSale(SalesTransaction s)
         {
-            return View();
+            s.SalesStatus = true;
+            s.SalesDateTime = DateTime.Parse(DateTime.Now.ToShortDateString());
+            co.SalesTransactions.Add(s);
+            co.SaveChanges();
+            return RedirectToAction("Index", "Sales");
         }
     }
 }

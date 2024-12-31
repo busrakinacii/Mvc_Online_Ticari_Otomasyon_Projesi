@@ -2937,10 +2937,10 @@
     <Content Include="Views\CurrentPanel\Orders.cshtml" />
     <Content Include="Views\Alerts\Index.cshtml" />
     <Content Include="Views\Product\MakeSale.cshtml" />
+    <Content Include="Views\Cargo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cargo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

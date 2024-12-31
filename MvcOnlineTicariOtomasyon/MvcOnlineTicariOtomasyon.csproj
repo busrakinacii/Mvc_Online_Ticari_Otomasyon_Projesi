@@ -155,6 +155,7 @@
     <Compile Include="Models\Classes\Admin.cs" />
     <Compile Include="Models\Classes\Bill.cs" />
     <Compile Include="Models\Classes\BillPencil.cs" />
+    <Compile Include="Models\Classes\CargoDetail.cs" />
     <Compile Include="Models\Classes\Category.cs" />
     <Compile Include="Models\Classes\Class1.cs" />
     <Compile Include="Models\Classes\Context.cs" />

@@ -1,8 +1,27 @@
-﻿
+﻿@using MvcOnlineTicariOtomasyon.Models.Classes
+@model List<CargoDetail>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Kargolar</h2>
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Personnel</td>
+            <td>@x.Buyer</td>
+            <td>@x.Datetime</td>
+            <td><a href="/Cargo/CargoDetail/@x.CargoDetailID" class="btn btn-default" style="background-color:lightseagreen; color:white">Detaylar</a></td>
+        </tr>
+    }
 
+</table>
+<a href="/Department/DepartmentAdd" class="btn btn-primary">Yeni Kargo Girişi</a>

@@ -6,6 +6,14 @@
 }
 
 <h2>Kargolar</h2>
+<br />
+@using (Html.BeginForm("Index", "Cargo", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası: @Html.TextBox("p")
+        <input type="submit" value="Ara" style="width: 85px; background-color: lightseagreen; color:white" />
+    </p>
+}
 <table class="table table-bordered" style="margin-top:20px">
     <tr>
         <th>Personel</th>
@@ -24,4 +32,4 @@
     }
 
 </table>
-<a href="/Department/DepartmentAdd" class="btn btn-primary">Yeni Kargo Girişi</a>
+<a href="/Cargo/CargoAdd" class="btn btn-primary">Yeni Kargo Girişi</a>

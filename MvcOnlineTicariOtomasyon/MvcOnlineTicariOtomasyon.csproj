@@ -2938,6 +2938,7 @@
     <Content Include="Views\Alerts\Index.cshtml" />
     <Content Include="Views\Product\MakeSale.cshtml" />
     <Content Include="Views\Cargo\Index.cshtml" />
+    <Content Include="Views\Cargo\CargoAdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,10 +11,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: Cargo
         Context co = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var cargos = co.CargoDetails.ToList();
-            return View(cargos);
+            var cargos = from x in co.CargoDetails select x;
+            if (!string.IsNullOrEmpty(p))
+            {
+                cargos = cargos.Where(y => y.TrackingCode.Contains(p));
+            }
+            return View(cargos.ToList());
         }
         [HttpGet]
         public ActionResult CargoAdd()

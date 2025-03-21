@@ -21,6 +21,7 @@
         <th>Tarih</th>
         <th>Takip Kodu</th>
         <th>Detaylar</th>
+        <th>QR Kod</th>
     </tr>
     @foreach (var x in Model)
     {
@@ -30,6 +31,7 @@
             <td>@x.Datetime</td>
             <td>@x.TrackingCode</td>
             <td><a href="/Cargo/CargoTracking/@x.TrackingCode" class="btn btn-default" style="background-color:lightseagreen; color:white">Detaylar</a></td>
+            <td><a href="/Cargo/QrCode/@x.CargoDetailID" class="btn btn-default" style="background-color:lightslategrey; color:white">QR</a></td>
         </tr>
     }
 </table>

@@ -149,6 +149,7 @@
     <Compile Include="Controllers\PersonnelController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\ToDoListController.cs" />
@@ -2943,6 +2944,8 @@
     <Content Include="Views\Cargo\Index.cshtml" />
     <Content Include="Views\Cargo\CargoAdd.cshtml" />
     <Content Include="Views\Cargo\CargoTracking.cshtml" />
+    <Content Include="Views\QR\Index.cshtml" />
+    <Content Include="Views\Cargo\QrCode.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,10 @@
 ﻿using MvcOnlineTicariOtomasyon.Models.Classes;
+using QRCoder;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -48,6 +52,22 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var val = co.CargoTrackings.Where(x => x.TrackingCode == id).ToList();
             return View(val);
+        }
+        [HttpPost]
+        public ActionResult QrCode(int id)
+        {
+            var tracking = co.CargoDetails.Find(id);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                QRCodeGenerator codeCreate = new QRCodeGenerator();
+                QRCodeGenerator.QRCode squareCode = codeCreate.CreateQrCode(tracking.TrackingCode, QRCodeGenerator.ECCLevel.Q);
+                using (Bitmap picture = squareCode.GetGraphic(10))
+                {
+                    picture.Save(ms, ImageFormat.Png);
+                    ViewBag.qrCodeImage = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return View("QrCode", tracking);
         }
     }
 }

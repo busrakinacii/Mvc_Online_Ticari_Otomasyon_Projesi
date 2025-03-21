@@ -1,0 +1,19 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.CargoDetail
+@{
+    ViewBag.Title = "QrCode";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+@*<h2>QrCode</h2>*@
+<div>
+    @using (Html.BeginForm("QrCode", "Cargo", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.CargoDetailID)
+        @Html.TextBoxFor(m => m.TrackingCode, new { @class = "form-control", @readonly = "readonly" })
+    }
+    <br />
+    @if (ViewBag.qrCodeImage != null)
+    {
+        <img src="@ViewBag.qrCodeImage" alt="" style="width:400px;height:400px" />
+    }
+</div>

@@ -38,5 +38,45 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                 .AddSeries(chartType: "Pie", name: "Stok", xValue: xvalue, yValues: yvalue);
             return File(chart.ToWebImage().GetBytes(), "image/jpeg");
         }
+
+        public ActionResult Index4()
+        {
+            return View();
+        }
+
+        public ActionResult VisualizeProductResult()
+        {
+            return Json(ProductList(), JsonRequestBehavior.AllowGet);
+        }
+        public List<ClassChart> ProductList()
+        {
+            List<ClassChart> clss = new List<ClassChart>();
+            clss.Add(new ClassChart()
+            {
+                productName = "Bilgisayar",
+                productStock = 120
+            });
+            clss.Add(new ClassChart()
+            {
+                productName = "Beyaz Eşya",
+                productStock = 150
+            });
+            clss.Add(new ClassChart()
+            {
+                productName = "Mobilya",
+                productStock = 70
+            });
+            clss.Add(new ClassChart()
+            {
+                productName = "Küçük Ev Aletleri",
+                productStock = 180
+            });
+            clss.Add(new ClassChart()
+            {
+                productName = "Mobil Cihazlar",
+                productStock = 90
+            });
+            return clss;
+        }
     }
 }

@@ -169,6 +169,7 @@
     <Compile Include="Models\Classes\CargoTracking.cs" />
     <Compile Include="Models\Classes\Category.cs" />
     <Compile Include="Models\Classes\Class1.cs" />
+    <Compile Include="Models\Classes\ClassChart.cs" />
     <Compile Include="Models\Classes\Context.cs" />
     <Compile Include="Models\Classes\Current.cs" />
     <Compile Include="Models\Classes\Department.cs" />
@@ -2950,6 +2951,7 @@
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Chart\Index2.cshtml" />
     <Content Include="Views\Chart\Index3.cshtml" />
+    <Content Include="Views\Chart\Index4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

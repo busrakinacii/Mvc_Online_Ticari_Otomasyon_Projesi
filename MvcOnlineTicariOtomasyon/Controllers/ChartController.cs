@@ -78,5 +78,28 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             });
             return clss;
         }
+
+        public ActionResult Index5()
+        {
+            return View();
+        }
+        public ActionResult VisualizeProductResult2()
+        {
+            return Json(ProductList2(), JsonRequestBehavior.AllowGet);
+        }
+
+        public List<ClassChart2> ProductList2()
+        {
+            List<ClassChart2> clss = new List<ClassChart2>();
+            using (var c = new Context())
+            {
+                clss = c.Products.Select(x => new ClassChart2
+                {
+                    prdctName = x.ProductName,
+                    prdctStock = x.ProductStock,
+                }).ToList();
+                return clss;
+            }
+        }
     }
 }

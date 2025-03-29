@@ -27,5 +27,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var values = co.SalesTransactions.Where(x => x.CurrentID == id).ToList();
             return View();
         }
+        public ActionResult IncomingMessages()
+        {
+            return View();
+        }
+        //[HttpGet]
+        //public ActionResult NewMessages()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult NewMessages()
+        //{
+        //    return View();
+        //}
     }
 }

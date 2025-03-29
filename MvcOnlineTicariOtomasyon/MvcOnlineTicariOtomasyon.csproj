@@ -2954,6 +2954,8 @@
     <Content Include="Views\Chart\Index3.cshtml" />
     <Content Include="Views\Chart\Index4.cshtml" />
     <Content Include="Views\Chart\Index5.cshtml" />
+    <Content Include="Views\Chart\Index6.cshtml" />
+    <Content Include="Views\Chart\Index7.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -101,5 +101,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                 return clss;
             }
         }
+
+        public ActionResult Index6()
+        {
+            return View();
+        }
+        public ActionResult Index7()
+        {
+            return View();
+        }
     }
 }

@@ -178,6 +178,7 @@
     <Compile Include="Models\Classes\GroupClass.cs" />
     <Compile Include="Models\Classes\GroupClass2.cs" />
     <Compile Include="Models\Classes\GroupClass3.cs" />
+    <Compile Include="Models\Classes\Messages.cs" />
     <Compile Include="Models\Classes\Personnel.cs" />
     <Compile Include="Models\Classes\Product.cs" />
     <Compile Include="Models\Classes\ProductDetail.cs" />

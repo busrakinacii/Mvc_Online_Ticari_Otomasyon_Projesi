@@ -29,7 +29,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult IncomingMessages()
         {
-            return View();
+            var message = co.Messages.ToList();
+            return View(message);
         }
         //[HttpGet]
         //public ActionResult NewMessages()

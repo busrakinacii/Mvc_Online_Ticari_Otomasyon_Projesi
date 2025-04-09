@@ -1,9 +1,11 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Classes;
 @model List<Messages>
+
 @{
-    ViewBag.Title = "IncomingMessages";
+    ViewBag.Title = "OutgoingMessages";
     Layout = "~/Views/Shared/_CurrentLayout.cshtml";
 }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -177,7 +179,7 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="read-mail.html">@x.Sender</a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@x.Subject</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@x.Subject</b> - @x.Content.Substring(0, 50).ToString()...
                                             </td>
@@ -268,4 +270,5 @@
     <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 </body>
 </html>
+
 

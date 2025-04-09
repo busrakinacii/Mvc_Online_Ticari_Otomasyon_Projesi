@@ -27,9 +27,24 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var values = co.SalesTransactions.Where(x => x.CurrentID == id).ToList();
             return View();
         }
+
+        //Gelen Mesajlar
         public ActionResult IncomingMessages()
         {
-            var message = co.Messages.ToList();
+            var mail = (string)Session["CurrentMail"];
+            var message = co.Messages.Where(x => x.Receiver == mail).ToList();
+            var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
+            ViewBag.d1 = incomingNumber;
+            return View(message);
+        }
+
+        //Giden Mesajlar
+        public ActionResult OutgoingMessages()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var message = co.Messages.Where(x => x.Sender == mail).ToList();
+            var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();
+            ViewBag.d2 = outgoingNumber;
             return View(message);
         }
         //[HttpGet]

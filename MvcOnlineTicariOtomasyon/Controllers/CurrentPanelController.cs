@@ -35,6 +35,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var message = co.Messages.Where(x => x.Receiver == mail).ToList();
             var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
             ViewBag.d1 = incomingNumber;
+            var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();
+            ViewBag.d2 = outgoingNumber;
             return View(message);
         }
 
@@ -43,9 +45,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var mail = (string)Session["CurrentMail"];
             var message = co.Messages.Where(x => x.Sender == mail).ToList();
+            var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
+            ViewBag.d1 = incomingNumber;
             var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();
             ViewBag.d2 = outgoingNumber;
             return View(message);
+        }
+        public ActionResult MessageDetail()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
+            ViewBag.d1 = incomingNumber;
+            var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();
+            ViewBag.d2 = outgoingNumber;
+            return View();
         }
         //[HttpGet]
         //public ActionResult NewMessages()

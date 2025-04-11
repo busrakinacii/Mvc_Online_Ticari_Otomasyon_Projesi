@@ -1,4 +1,5 @@
-﻿
+﻿@using MvcOnlineTicariOtomasyon.Models.Classes;
+@model List<Messages>
 @{
     ViewBag.Title = "MessageDetail";
     Layout = "~/Views/Shared/_CurrentLayout.cshtml";
@@ -119,66 +120,69 @@
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->
-                <div class="col-md-9">
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h3 class="card-title">Mesajı Oku</h3>
-                            <div class="card-tools">
-                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
-                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                @foreach (var x in Model)
+                {
+                    <div class="col-md-9">
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title">Mesajı Oku</h3>
+                                <div class="card-tools">
+                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                                </div>
                             </div>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body p-0">
-                            <div class="mailbox-read-info">
-                                <h5>Konu:</h5>
-                                <h6>
-                                   Gönderen: support@adminlte.io
-                                    <span class="mailbox-read-time float-right">Tarih</span>
-                                </h6>
-                            </div>
-                            <!-- /.mailbox-read-info -->
-                            <div class="mailbox-controls with-border text-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
-                                        <i class="fas fa-reply"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
-                                        <i class="fas fa-share"></i>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <div class="mailbox-read-info">
+                                    <h5>Konu:@x.Subject</h5>
+                                    <h6>
+                                        Gönderen: @x.Sender
+                                        <span class="mailbox-read-time float-right">@x.Date.ToShortDateString()</span>
+                                    </h6>
+                                </div>
+                                <!-- /.mailbox-read-info -->
+                                <div class="mailbox-controls with-border text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
+                                            <i class="fas fa-reply"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                    </div>
+                                    <!-- /.btn-group -->
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                                        <i class="fas fa-print"></i>
                                     </button>
                                 </div>
-                                <!-- /.btn-group -->
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
-                                    <i class="fas fa-print"></i>
-                                </button>
+                                <!-- /.mailbox-controls -->
+                                <div class="mailbox-read-message">
+                                    <p>Merhaba,</p>
+                                    <p>
+                                        @x.Content
+                                    </p>
+                                </div>
+                                <!-- /.mailbox-read-message -->
                             </div>
-                            <!-- /.mailbox-controls -->
-                            <div class="mailbox-read-message">
-                                <p>Hello John,</p>
-                                <p>
-                                    Keffiyeh blog actually fashion axe vegan, irony biodiesel. Cold-pressed hoodie chillwave put a bird
-                                </p>
+                            <!-- /.card-body -->
+                            <!-- /.card-footer -->
+                            <div class="card-footer">
+                                <div class="float-right">
+                                    <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Yanıtla</button>
+                                    <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
+                                </div>
+                                <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
+                                <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
                             </div>
-                            <!-- /.mailbox-read-message -->
+                            <!-- /.card-footer -->
                         </div>
-                        <!-- /.card-body -->
-                        <!-- /.card-footer -->
-                        <div class="card-footer">
-                            <div class="float-right">
-                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Yanıtla</button>
-                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
-                            </div>
-                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
-                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
-                        </div>
-                        <!-- /.card-footer -->
+                        <!-- /.card -->
                     </div>
-                    <!-- /.card -->
-                </div>
-                <!-- /.col -->
+                    <!-- /.col -->
+                }
             </div>
             <!-- /.row -->
         </div>

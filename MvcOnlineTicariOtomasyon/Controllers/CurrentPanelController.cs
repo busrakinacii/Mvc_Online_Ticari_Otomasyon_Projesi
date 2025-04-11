@@ -51,14 +51,15 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = outgoingNumber;
             return View(message);
         }
-        public ActionResult MessageDetail()
+        public ActionResult MessageDetail(int id)
         {
+            var value = co.Messages.Where(x => x.MessageID == id).ToList();
             var mail = (string)Session["CurrentMail"];
             var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
             ViewBag.d1 = incomingNumber;
             var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();
             ViewBag.d2 = outgoingNumber;
-            return View();
+            return View(value);
         }
         //[HttpGet]
         //public ActionResult NewMessages()

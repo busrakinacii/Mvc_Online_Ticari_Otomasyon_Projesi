@@ -2961,6 +2961,7 @@
     <Content Include="Views\CurrentPanel\IncomingMessages.cshtml" />
     <Content Include="Views\CurrentPanel\OutgoingMessages.cshtml" />
     <Content Include="Views\CurrentPanel\MessageDetail.cshtml" />
+    <Content Include="Views\CurrentPanel\NewMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

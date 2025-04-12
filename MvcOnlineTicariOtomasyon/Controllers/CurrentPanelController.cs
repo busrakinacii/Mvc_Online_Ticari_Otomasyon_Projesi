@@ -61,15 +61,15 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = outgoingNumber;
             return View(value);
         }
-        //[HttpGet]
-        //public ActionResult NewMessages()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult NewMessages()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public ActionResult NewMessages()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewMessages(Messages m)
+        {
+            return View();
+        }
     }
 }

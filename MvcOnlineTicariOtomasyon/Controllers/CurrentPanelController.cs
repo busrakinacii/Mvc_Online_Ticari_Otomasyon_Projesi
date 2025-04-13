@@ -76,6 +76,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult NewMessages(Messages m)
         {
+            var mail = (string)Session["CurrentMail"];
+            m.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            m.Sender = mail;
             co.Messages.Add(m);
             co.SaveChanges();
             return View();

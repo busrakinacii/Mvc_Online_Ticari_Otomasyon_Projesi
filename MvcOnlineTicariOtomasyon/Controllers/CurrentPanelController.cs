@@ -64,11 +64,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult NewMessages()
         {
+
+            var mail = (string)Session["CurrentMail"];
+            var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
+            ViewBag.d1 = incomingNumber;
+            var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();
+            ViewBag.d2 = outgoingNumber;
+
             return View();
         }
         [HttpPost]
         public ActionResult NewMessages(Messages m)
         {
+            co.Messages.Add(m);
+            co.SaveChanges();
             return View();
         }
     }

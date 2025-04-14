@@ -32,7 +32,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult IncomingMessages()
         {
             var mail = (string)Session["CurrentMail"];
-            var message = co.Messages.Where(x => x.Receiver == mail).ToList();
+            var message = co.Messages.Where(x => x.Receiver == mail).OrderByDescending(x => x.MessageID).ToList();
             var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
             ViewBag.d1 = incomingNumber;
             var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();
@@ -44,7 +44,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult OutgoingMessages()
         {
             var mail = (string)Session["CurrentMail"];
-            var message = co.Messages.Where(x => x.Sender == mail).ToList();
+            var message = co.Messages.Where(x => x.Sender == mail).OrderByDescending(z => z.MessageID).ToList();
             var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
             ViewBag.d1 = incomingNumber;
             var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();

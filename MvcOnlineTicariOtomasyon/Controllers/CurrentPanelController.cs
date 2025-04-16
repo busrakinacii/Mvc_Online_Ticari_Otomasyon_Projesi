@@ -25,7 +25,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var mail = (string)Session["CurrentMail"];
             var id = co.Currents.Where(x => x.CurrentMail == mail.ToString()).Select(y => y.CurrentId).FirstOrDefault();
             var values = co.SalesTransactions.Where(x => x.CurrentID == id).ToList();
-            return View();
+            return View(values);
         }
 
         //Gelen Mesajlar
@@ -81,6 +81,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             m.Sender = mail;
             co.Messages.Add(m);
             co.SaveChanges();
+            return View();
+        }
+        public ActionResult CargoTracking()
+        {
             return View();
         }
     }

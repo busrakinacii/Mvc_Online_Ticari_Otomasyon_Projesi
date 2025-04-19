@@ -89,5 +89,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             cargos = cargos.Where(y => y.TrackingCode.Contains(p));
             return View(cargos.ToList());
         }
+        public ActionResult CurrentCargoTracking(string id)
+        {
+            var value = co.CargoTrackings.OrderByDescending(x => x.TrackingCode == id).ToList();
+            return View(value);
+        }
     }
 }

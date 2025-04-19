@@ -2963,6 +2963,7 @@
     <Content Include="Views\CurrentPanel\MessageDetail.cshtml" />
     <Content Include="Views\CurrentPanel\NewMessages.cshtml" />
     <Content Include="Views\CurrentPanel\CargoTracking.cshtml" />
+    <Content Include="Views\CurrentPanel\CurrentCargoTracking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

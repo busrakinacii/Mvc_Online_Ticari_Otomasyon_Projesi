@@ -7,17 +7,13 @@
 <br />
 <table class="table table-hover">
     <tr>
-        <th>_</th>
         <th>Açıklama</th>
         <th>Tarih</th>
     </tr>
-    @{
-        int i = 1;
-    }
+
     @foreach (var x in Model)
     {
         <tr>
-            <td>@i</td>
             <td>@x.Comment</td>
             <td>@x.Datetime</td>
         </tr>

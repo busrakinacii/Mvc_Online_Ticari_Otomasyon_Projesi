@@ -91,7 +91,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult CurrentCargoTracking(string id)
         {
-            var value = co.CargoTrackings.OrderByDescending(x => x.TrackingCode == id).ToList();
+            var value = co.CargoTrackings.Where(x => x.TrackingCode == id).OrderByDescending(y => y.CargoTrackingID).ToList();
             return View(value);
         }
     }

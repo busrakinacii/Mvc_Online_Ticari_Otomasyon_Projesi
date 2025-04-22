@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -64,13 +65,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult NewMessages()
         {
-
             var mail = (string)Session["CurrentMail"];
             var incomingNumber = co.Messages.Count(x => x.Receiver == mail).ToString();
             ViewBag.d1 = incomingNumber;
             var outgoingNumber = co.Messages.Count(x => x.Sender == mail).ToString();
             ViewBag.d2 = outgoingNumber;
-
             return View();
         }
         [HttpPost]
@@ -93,6 +92,12 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var value = co.CargoTrackings.Where(x => x.TrackingCode == id).OrderByDescending(y => y.CargoTrackingID).ToList();
             return View(value);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

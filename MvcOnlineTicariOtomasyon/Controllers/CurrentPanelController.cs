@@ -17,7 +17,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CurrentMail"];
-            var values = co.Currents.FirstOrDefault(x => x.CurrentMail == mail);
+            var values = co.Currents.Where(x => x.CurrentMail == mail).ToList();
             ViewBag.m = mail;
             return View(values);
         }

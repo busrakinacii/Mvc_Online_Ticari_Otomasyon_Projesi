@@ -60,7 +60,7 @@
                                 }
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>Followers</b> <a class="float-right">1,322</a>
+                                        <b>Toplam Satış</b> <a class="float-right">@ViewBag.totalSales</a>
                                     </li>
                                     <li class="list-group-item">
                                         <b>Following</b> <a class="float-right">543</a>
@@ -82,28 +82,20 @@
                             <!-- /.card-header -->
                             @foreach (var y in Model)
                             {
-
-
                                 <div class="card-body">
-                                    <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                                    <strong><i class="fas fa-book mr-1"></i> Meslek</strong>
                                     <p class="text-muted">
-                                        B.S. in Computer Science from the University of Tennessee at Knoxville
+                                        Bilgisayar Mühendisi @ViewBag.mid
                                     </p>
                                     <hr>
                                     <strong><i class="fas fa-map-marker-alt mr-1"></i>Şehir</strong>
                                     <p class="text-muted">@y.CurrentCity</p>
                                     <hr>
-                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-                                    <p class="text-muted">
-                                        <span class="tag tag-danger">UI Design</span>
-                                        <span class="tag tag-success">Coding</span>
-                                        <span class="tag tag-info">Javascript</span>
-                                        <span class="tag tag-warning">PHP</span>
-                                        <span class="tag tag-primary">Node.js</span>
-                                    </p>
+                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Telefon</strong>
+                                    <p class="text-muted">(500) (201-45 55)</p>
                                     <hr>
-                                    <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                                    <strong><i class="far fa-file-alt mr-1"></i> Notlar</strong>
+                                    <p class="text-muted">Not almanın amacı, verimliliğini artırmaktır. Aslında not alma, bilginin sadeleştirilmesi, önemli olanın önemsizlerden ayrılması ve öğrenmenin kolaylaştırılmasıdır.</p>
                                 </div>
                             }
                             <!-- /.card-body -->

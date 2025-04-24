@@ -19,6 +19,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var mail = (string)Session["CurrentMail"];
             var values = co.Currents.Where(x => x.CurrentMail == mail).ToList();
             ViewBag.m = mail;
+            var mailid = co.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentId).FirstOrDefault();
+            ViewBag.mid = mailid;
+            var totalSales = co.SalesTransactions.Where(x => x.CurrentID == mailid).Count();
+            ViewBag.totalSales = totalSales;
             return View(values);
         }
         public ActionResult Orders()

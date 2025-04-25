@@ -23,6 +23,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.mid = mailid;
             var totalSales = co.SalesTransactions.Where(x => x.CurrentID == mailid).Count();
             ViewBag.totalSales = totalSales;
+            var totalPrice = co.SalesTransactions.Where(x => x.CurrentID == mailid).Sum(y => y.SalesTotalAmount);
+            ViewBag.totalPrice = totalPrice;
+            var totalProductPrice = co.SalesTransactions.Where(x => x.CurrentID == mailid).Sum(y => y.SalesPiece);
+            ViewBag.totalProductPrice = totalProductPrice;
             return View(values);
         }
         public ActionResult Orders()

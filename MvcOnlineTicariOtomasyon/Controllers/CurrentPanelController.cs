@@ -27,6 +27,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.totalPrice = totalPrice;
             var totalProductPrice = co.SalesTransactions.Where(x => x.CurrentID == mailid).Sum(y => y.SalesPiece);
             ViewBag.totalProductPrice = totalProductPrice;
+            var NameSurname = co.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
+            ViewBag.NameSurname = NameSurname;
+
             return View(values);
         }
         public ActionResult Orders()

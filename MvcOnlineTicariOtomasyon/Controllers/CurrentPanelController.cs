@@ -17,18 +17,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CurrentMail"];
-            var values = co.Currents.Where(x => x.CurrentMail == mail).ToList();
+            var values = co.Messages.Where(x => x.Receiver == mail).ToList();
             ViewBag.m = mail;
             var mailid = co.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentId).FirstOrDefault();
             ViewBag.mid = mailid;
             var totalSales = co.SalesTransactions.Where(x => x.CurrentID == mailid).Count();
             ViewBag.totalSales = totalSales;
-            var totalPrice = co.SalesTransactions.Where(x => x.CurrentID == mailid).Sum(y => y.SalesTotalAmount);
+            var totalPrice = co.SalesTransactions.Where(x => x.CurrentID == mailid).Sum(y => (decimal?)y.SalesTotalAmount) ?? 0;
             ViewBag.totalPrice = totalPrice;
-            var totalProductPrice = co.SalesTransactions.Where(x => x.CurrentID == mailid).Sum(y => y.SalesPiece);
+            var totalProductPrice = co.SalesTransactions.Where(x => x.CurrentID == mailid).Sum(y => (int?)y.SalesPiece) ?? 0;
             ViewBag.totalProductPrice = totalProductPrice;
             var NameSurname = co.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentName + " " + y.CurrentSurname).FirstOrDefault();
             ViewBag.NameSurname = NameSurname;
+            var city = co.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentCity).FirstOrDefault();
+            ViewBag.City = city;
 
             return View(values);
         }

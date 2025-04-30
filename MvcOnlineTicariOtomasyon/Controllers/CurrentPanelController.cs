@@ -112,5 +112,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             Session.Abandon();
             return RedirectToAction("Index", "Login");
         }
+        public PartialViewResult Partial1()
+        {
+            return PartialView();
+        }
     }
 }

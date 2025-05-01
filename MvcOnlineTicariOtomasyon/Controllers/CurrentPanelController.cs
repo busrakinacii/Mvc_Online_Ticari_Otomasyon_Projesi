@@ -114,7 +114,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public PartialViewResult Partial1()
         {
-            return PartialView();
+            var mail = (string)Session["CurrentMail"];
+            var id = co.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentId).FirstOrDefault();
+            var currentFind = co.Currents.Find(id);
+            return PartialView("Partial1", currentFind);
         }
     }
 }

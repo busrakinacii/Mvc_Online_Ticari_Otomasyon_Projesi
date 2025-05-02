@@ -119,5 +119,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var currentFind = co.Currents.Find(id);
             return PartialView("Partial1", currentFind);
         }
+        public PartialViewResult Partial2()
+        {
+            var values = co.Messages.Where(x => x.Sender == "admin").ToList();
+            return PartialView(values);
+        }
     }
 }

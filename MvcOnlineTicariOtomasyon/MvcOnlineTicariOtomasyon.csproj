@@ -2967,6 +2967,7 @@
     <Content Include="Views\CurrentPanel\CargoTracking.cshtml" />
     <Content Include="Views\CurrentPanel\CurrentCargoTracking.cshtml" />
     <Content Include="Views\CurrentPanel\Partial1.cshtml" />
+    <Content Include="Views\CurrentPanel\Partial2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

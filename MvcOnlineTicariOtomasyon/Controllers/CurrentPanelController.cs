@@ -124,5 +124,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var values = co.Messages.Where(x => x.Sender == "admin").ToList();
             return PartialView(values);
         }
+        public ActionResult CurrentInformationUpdate(Current cr)
+        {
+            var current = co.Currents.Find(cr.CurrentId);
+            current.CurrentName = cr.CurrentName;
+            current.CurrentSurname = cr.CurrentSurname;
+            current.CurrentPassword = cr.CurrentPassword;
+            co.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

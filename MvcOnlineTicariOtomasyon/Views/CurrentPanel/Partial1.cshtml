@@ -1,8 +1,10 @@
 ﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Current
-@using (Html.BeginForm("Partial1", "Current", FormMethod.Post))
+
+@using (Html.BeginForm("CurrentInformationUpdate", "CurrentPanel", FormMethod.Post))
 {
 
     <form class="form-horizontal">
+        @Html.HiddenFor(x => x.CurrentId);
         <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Ad</label>
             <div class="col-sm-10">

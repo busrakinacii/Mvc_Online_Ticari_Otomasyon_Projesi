@@ -12,6 +12,8 @@ namespace MvcOnlineTicariOtomasyon
     {
         protected void Application_Start()
         {
+            //Authorize atribütünü ekleme işlemini yaptık
+            GlobalFilters.Filters.Add(new AuthorizeAttribute());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

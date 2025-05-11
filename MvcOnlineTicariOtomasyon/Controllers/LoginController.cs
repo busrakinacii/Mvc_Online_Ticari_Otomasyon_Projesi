@@ -8,6 +8,8 @@ using System.Web.Security;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    //global.asax kısmında hepsine authorixe uyguladık ancak AllowAnonymous demek bu controller hariç hepsine uygular
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login

@@ -171,6 +171,7 @@
     <Compile Include="Models\Classes\CargoTracking.cs" />
     <Compile Include="Models\Classes\Category.cs" />
     <Compile Include="Models\Classes\Class1.cs" />
+    <Compile Include="Models\Classes\Class2.cs" />
     <Compile Include="Models\Classes\ClassChart.cs" />
     <Compile Include="Models\Classes\ClassChart2.cs" />
     <Compile Include="Models\Classes\Context.cs" />
@@ -2970,6 +2971,7 @@
     <Content Include="Views\CurrentPanel\Partial1.cshtml" />
     <Content Include="Views\CurrentPanel\Partial2.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
+    <Content Include="Views\Category\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

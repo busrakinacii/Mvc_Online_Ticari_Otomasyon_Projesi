@@ -61,7 +61,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             co.BillPencils.Add(p);
             co.SaveChanges();
-            return RedirectToAction("Index"); 
+            return RedirectToAction("Index");
+        }
+        public ActionResult Dynamic()
+        {
+            Class3 cs = new Class3();
+            cs.value1 = co.Bills.ToList();
+            cs.value2 = co.BillPencils.ToList();
+            return View(cs);
         }
     }
 }

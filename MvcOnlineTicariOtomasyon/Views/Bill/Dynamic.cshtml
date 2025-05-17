@@ -1,8 +1,67 @@
-﻿
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Class3
 @{
     ViewBag.Title = "Dynamic";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Dynamic</h2>
+<br />
+<br />
+<div class="panel panel-default">
+    <div class="panel-heading">
 
+        <div class="row">
+
+            <h2 class="panel-title pull-left" style="margin-left:10px;">
+
+                <strong>Order Details</strong>
+
+            </h2>
+
+            <button style="margin-right:10px" class="btn btn-primary pull-right" onclick="addNewOrder()">New Order</button>
+
+        </div>
+
+    </div>
+    @*Fatura Listesi*@
+    @foreach (var item in Model.value1)
+    {
+        <div class="panel-body">
+            <table class="table table-striped table-responsive">
+                <tbody>
+                    <tr>
+                        <td>Seri-Sıra No : @item.BillSerialNumber-@item.BillOrderNumber</td>
+                        <td>Tarih: @item.BillDatetime</td>
+                        <td>Vergi Dairesi: @item.BillTaxOffice</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>Açıklama</th>
+                                        <th>Miktar</th>
+                                        <th>Fiyat</th>
+                                    </tr>
+                                    @{
+                                        var totalBill = 0;
+                                    }
+                                    @foreach (var order in item.BillPencils)
+                                    {
+                                        <tr>
+                                            <td>@order.BillPencilExplanation</td>
+                                            <td>@order.BillPencilAmount</td>
+                                            <td>@order.BillPencilUnitPrice</td>
+
+                                        </tr>
+                                        totalBill = totalBill + @Convert.ToInt32(order.BillPencilTotal);
+                                    }
+                                </tbody>
+                            </table>
+                            <span class="pull-right" style="margin-right:100px;"><strong>Total Bill :  </strong> @totalBill</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

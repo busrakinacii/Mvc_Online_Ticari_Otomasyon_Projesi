@@ -13,11 +13,11 @@
 
             <h2 class="panel-title pull-left" style="margin-left:10px;">
 
-                <strong>Order Details</strong>
+                <strong>Fatura & Kalem İşlemleri</strong>
 
             </h2>
 
-            <button style="margin-right:10px" class="btn btn-primary pull-right" onclick="addNewOrder()">New Order</button>
+            <button style="margin-right:10px" class="btn btn-primary pull-right" onclick="addNewOrder()">Fatura Girişi</button>
 
         </div>
 
@@ -30,11 +30,12 @@
                 <tbody>
                     <tr>
                         <td>Seri-Sıra No : @item.BillSerialNumber-@item.BillOrderNumber</td>
+                        <td>Tarih: @item.BillDeliverer</td>
                         <td>Tarih: @item.BillDatetime</td>
                         <td>Vergi Dairesi: @item.BillTaxOffice</td>
                     </tr>
                     <tr>
-                        <td colspan="3">
+                        <td colspan="4">
                             <table class="table table-bordered">
                                 <tbody>
                                     <tr>
@@ -51,13 +52,14 @@
                                             <td>@order.BillPencilExplanation</td>
                                             <td>@order.BillPencilAmount</td>
                                             <td>@order.BillPencilUnitPrice</td>
+                                            <td>@order.BillPencilTotal</td>
 
                                         </tr>
                                         totalBill = totalBill + @Convert.ToInt32(order.BillPencilTotal);
                                     }
                                 </tbody>
                             </table>
-                            <span class="pull-right" style="margin-right:100px;"><strong>Total Bill :  </strong> @totalBill</span>
+                            <span class="pull-right" style="margin-right:100px;"><strong>Fatura Toplam Tutar :  </strong> @totalBill</span>
                         </td>
                     </tr>
                 </tbody>

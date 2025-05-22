@@ -70,5 +70,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             cs.value2 = co.BillPencils.ToList();
             return View(cs);
         }
+        public ActionResult BillSave(string BillSerialNumber, string BillOrderNumber, DateTime BillDatetime, string BillTaxOffice, string BillClock, string BillDeliverer, string BillRecipient, string BillTotalAmount, BillPencil[] pencils)
+        {
+            Bill bi = new Bill();
+            bi.BillSerialNumber = BillSerialNumber;
+            bi.BillOrderNumber = BillOrderNumber;
+            bi.BillDatetime = BillDatetime;
+            bi.BillTaxOffice = BillTaxOffice;
+            bi.BillClock = BillClock;
+            bi.BillDeliverer = BillDeliverer;
+            bi.BillRecipient = BillRecipient;
+            bi.BillTotalAmount = decimal.Parse(BillTotalAmount);
+            co.Bills.Add(bi);
+            co.SaveChanges();
+            return Json("İşlem Başarılı", JsonRequestBehavior.AllowGet);
+        }
     }
 }

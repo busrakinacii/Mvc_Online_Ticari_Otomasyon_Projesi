@@ -243,7 +243,7 @@
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 type: 'POST',
-                url: "/Siparis/SaveOrder",
+                url: "/Bill/BillSave",
                 data: data,
                 success: function (result) {
                     alert(result);
@@ -261,15 +261,21 @@
             orderArr.length = 0;
             $.each($("#detailsTable tbody tr"), function () {
                 orderArr.push({
-                    urun: $(this).find('td:eq(0)').html(),
-                    Adet: $(this).find('td:eq(1)').html(),
-                    Fiyat: $(this).find('td:eq(2)').html(),
-                    Toplam: $(this).find('td:eq(3)').html()
+                    BillPencilExplanation: $(this).find('td:eq(0)').html(),
+                    BillPencilAmount: $(this).find('td:eq(1)').html(),
+                    BillPencilUnitPrice: $(this).find('td:eq(2)').html(),
+                    BillPencilTotal: $(this).find('td:eq(3)').html()
                 });
             });
             var data = JSON.stringify({
-                ad: $("#ad").val(),
-                sehir: $("#sehir").val(),
+                BillSerialNumber: $("#BillSerialNumber").val(),
+                BillOrderNumber: $("#BillOrderNumber").val(),
+                BillDatetime: $("#BillDatetime").val(),
+                BillTaxOffice: $("#BillTaxOffice").val(),
+                BillClock: $("#BillClock").val(),
+                BillDeliverer: $("#BillDeliverer").val(),
+                BillRecipient: $("#BillRecipient").val(),
+                BillTotalAmount: $("#BillTotalAmount").val(),
                 order: orderArr
             });
             $.when(saveOrder(data)).then(function (response) {

@@ -3,25 +3,19 @@
     ViewBag.Title = "Dynamic";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <br />
 <br />
 @*Adım 1*@
 <div class="panel panel-default">
     <div class="panel-heading">
-
         <div class="row">
-
             <h2 class="panel-title pull-left" style="margin-left:10px;">
-
                 <strong>Fatura & Kalem İşlemleri</strong>
-
             </h2>
-
             <button style="margin-right:10px" class="btn btn-primary pull-right" onclick="addNewOrder()">Fatura Girişi</button>
-
         </div>
-
     </div>
     @*Fatura Listesi*@
     @foreach (var item in Model.value1)
@@ -213,10 +207,12 @@
         $("#addToList").click(function (e) {
             e.preventDefault();
             if ($.trim($("#BillPencilExplanation").val()) == "" || $.trim($("#BillPencilUnitPrice").val()) == "" || $.trim($("#BillPencilAmount").val()) == "") return;
+
             var Aciklama = $("#BillPencilExplanation").val(),
                 BirimFiyat = $("#BillPencilUnitPrice").val(),
                 Miktar = $("#BillPencilAmount").val(),
                 detailsTableBody = $("#detailsTable tbody");
+
             var productItem = '<tr><td>' + Aciklama + '</td><td>' + Miktar + '</td><td>' + BirimFiyat + '</td><td>' + (parseFloat(BirimFiyat) * parseInt(Miktar)) + '</td><td><a data-itemId="0" href="#" class="deleteItem">Remove</a></td></tr>';
             detailsTableBody.append(productItem);
             clearItem();

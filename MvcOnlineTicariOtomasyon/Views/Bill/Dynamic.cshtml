@@ -3,19 +3,18 @@
     ViewBag.Title = "Dynamic";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script src="~/Scripts/jquery-3.4.1.min.js"></script>
-<script src="~/Scripts/jquery-3.4.1.js"></script>
 <br />
 <br />
 @*Adım 1*@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <div class="row">
+        <div class="d-grid gap-2 d-md-flex ">
             <h2 class="panel-title pull-left" style="margin-left:10px;">
                 <strong>Fatura & Kalem İşlemleri</strong>
             </h2>
-            <button style="margin-right:10px" class="btn btn-primary pull-right" onclick="addNewOrder()">Fatura Girişi</button>
+            <button style="margin-right:10px" class="btn btn-primary col-2 mx-auto" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#newOrderModal">Fatura Girişi</button>
         </div>
+        <br />
     </div>
     @*Fatura Listesi*@
     @foreach (var item in Model.value1)
@@ -69,7 +68,8 @@
     <div class="modal-dialog modal-lg" style=" width: 900px !important;">
         <div class="modal-content">
             <div class="modal-header">
-                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">X</button>
+                @*<a href="#" class="close" data-bs-dismiss="modal">&times;</a>*@
                 <h4>Yeni Fatura Girişi</h4>
             </div>
             <form id="NewOrderForm">
@@ -80,7 +80,7 @@
                     <div class="form-horizontal">
                         <input type="hidden" id="BillId" />
 
-                        <div class="form-group">
+                        <div class="form-group d-flex mt-2 flex-wrap">
                             <label class="control-label col-md-2">
                                 Seri No
                             </label>
@@ -95,7 +95,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group d-flex mt-2 flex-wrap">
                             <label class="control-label col-md-2">
                                 Tarih
                             </label>
@@ -110,7 +110,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group d-flex mt-2 flex-wrap">
                             <label class="control-label col-md-2">
                                 Saat
                             </label>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group d-flex mt-2 flex-wrap">
                             <label class="control-label col-md-2">
                                 Teslim Alan
                             </label>
@@ -146,7 +146,7 @@
                     <hr />
                     <div class="form-horizontal">
                         <input type="hidden" id="id" />
-                        <div class="form-group">
+                        <div class="form-group d-flex mt-2 flex-wrap">
                             <label class="control-label col-md-2">
                                 Açıklama
                             </label>
@@ -160,7 +160,7 @@
                                 <input type="number" id="BillPencilUnitPrice" name="BillPencilUnitPrice" placeholder="Birim Başına Fiyat Miktarı" class="form-control" />
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group d-flex mt-2 flex-wrap">
                             <label class="control-label col-md-2">
                                 Miktar
                             </label>
@@ -168,8 +168,8 @@
                                 <input type="number" id="BillPencilAmount" name="BillPencilAmount" placeholder="Miktar Giriniz" class="form-control" />
                             </div>
 
-                            <div class="col-md-2 col-lg-offset-4">
-                                <a id="addToList" class="btn btn-primary">Listeye Ekle</a>
+                            <div class="col-md-4 col-lg-offset-2">
+                                <a id="addToList" class="btn btn-outline-primary">Listeye Ekle</a>
                             </div>
                         </div>
                         <table id="detailsTable" class="table">
@@ -186,7 +186,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="reset" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                    <button type="reset" class="btn btn-primary" data-bs-dismiss="modal">Kapat</button>
                     <button id="saveOrder" type="submit" class="btn btn-danger">Faturayı Kaydet</button>
                 </div>
             </form>
